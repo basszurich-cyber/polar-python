@@ -2,7 +2,7 @@ configVersion: 2.0.0
 generation:
   devContainers:
     enabled: true
-    schemaPath: https://api.polar.sh/openapi.json
+    schemaPath: https://api.spairehq.com/openapi.json
   sdkClassName: Spaire
   maintainOpenAPIOrder: true
   usageSnippets:

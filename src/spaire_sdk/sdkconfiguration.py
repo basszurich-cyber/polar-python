@@ -20,8 +20,8 @@ r"""Production environment"""
 SERVER_SANDBOX = "sandbox"
 r"""Sandbox environment"""
 SERVERS = {
-    SERVER_PRODUCTION: "https://api.polar.sh",
-    SERVER_SANDBOX: "https://sandbox-api.polar.sh",
+    SERVER_PRODUCTION: "https://api.spairehq.com",
+    SERVER_SANDBOX: "https://sandbox-api.spairehq.com",
 }
 """Contains the list of servers available to the SDK"""
 

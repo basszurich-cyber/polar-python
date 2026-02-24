@@ -3,7 +3,7 @@ speakeasyVersion: latest
 sources:
     Spaire-OAS:
         inputs:
-            - location: https://api.polar.sh/openapi.json
+            - location: https://api.spairehq.com/openapi.json
         overlays:
             - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/security.yml
             - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/type_parameter.yml

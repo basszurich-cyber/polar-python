@@ -618,8 +618,8 @@ You can override the default server globally by passing a server name to the `se
 
 | Name         | Server                         | Description            |
 | ------------ | ------------------------------ | ---------------------- |
-| `production` | `https://api.polar.sh`         | Production environment |
-| `sandbox`    | `https://sandbox-api.polar.sh` | Sandbox environment    |
+| `production` | `https://api.spairehq.com`         | Production environment |
+| `sandbox`    | `https://sandbox-api.spairehq.com` | Sandbox environment    |
 
 #### Example
 
@@ -649,7 +649,7 @@ from spaire_sdk import Spaire
 
 
 with Spaire(
-    server_url="https://api.polar.sh",
+    server_url="https://api.spairehq.com",
     access_token="<YOUR_BEARER_TOKEN_HERE>",
 ) as spaire:
 
@@ -868,7 +868,7 @@ with Spaire(
 
 Spaire API: Spaire HTTP and Webhooks API
 
-Read the docs at https://polar.sh/docs/api-reference
+Read the docs at https://spairehq.com/docs/api-reference
 <!-- End Summary [summary] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

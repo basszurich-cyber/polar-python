@@ -49,7 +49,7 @@ if TYPE_CHECKING:
 class Spaire(BaseSDK):
     r"""Spaire API: Spaire HTTP and Webhooks API
 
-    Read the docs at https://polar.sh/docs/api-reference
+    Read the docs at https://spairehq.com/docs/api-reference
     """
 
     organizations: "Organizations"

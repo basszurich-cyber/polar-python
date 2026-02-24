@@ -18,13 +18,13 @@ Introspect the current session and return its information.
 
 <!-- UsageSnippet language="python" operationID="customer_portal:customer-session:introspect" method="get" path="/v1/customer-portal/customer-session/introspect" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.customer_session.introspect(security=polar_sdk.CustomerPortalCustomerSessionIntrospectSecurity(
+    res = spaire.customer_portal.customer_session.introspect(security=spaire_sdk.CustomerPortalCustomerSessionIntrospectSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ))
 
@@ -60,13 +60,13 @@ Get information about the currently authenticated portal user.
 
 <!-- UsageSnippet language="python" operationID="customer_portal:customer-session:get_authenticated_user" method="get" path="/v1/customer-portal/customer-session/user" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.customer_session.get_authenticated_user(security=polar_sdk.CustomerPortalCustomerSessionGetAuthenticatedUserSecurity(
+    res = spaire.customer_portal.customer_session.get_authenticated_user(security=spaire_sdk.CustomerPortalCustomerSessionGetAuthenticatedUserSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ))
 

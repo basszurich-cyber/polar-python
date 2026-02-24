@@ -22,14 +22,14 @@ List benefits.
 
 <!-- UsageSnippet language="python" operationID="benefits:list" method="get" path="/v1/benefits/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.benefits.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.benefits.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -74,14 +74,14 @@ Create a benefit.
 
 <!-- UsageSnippet language="python" operationID="benefits:create" method="post" path="/v1/benefits/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.benefits.create(request={
+    res = spaire.benefits.create(request={
         "type": "license_keys",
         "description": "mature emergent at outside arrogantly gadzooks zealous equatorial notwithstanding",
         "properties": {},
@@ -120,14 +120,14 @@ Get a benefit by ID.
 
 <!-- UsageSnippet language="python" operationID="benefits:get" method="get" path="/v1/benefits/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.benefits.get(id="<value>")
+    res = spaire.benefits.get(id="<value>")
 
     # Handle response
     print(res)
@@ -163,14 +163,14 @@ Update a benefit.
 
 <!-- UsageSnippet language="python" operationID="benefits:update" method="patch" path="/v1/benefits/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.benefits.update(id="<value>", request_body={
+    res = spaire.benefits.update(id="<value>", request_body={
         "type": "custom",
     })
 
@@ -213,14 +213,14 @@ Delete a benefit.
 
 <!-- UsageSnippet language="python" operationID="benefits:delete" method="delete" path="/v1/benefits/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.benefits.delete(id="<value>")
+    spaire.benefits.delete(id="<value>")
 
     # Use the SDK ...
 
@@ -254,14 +254,14 @@ It's especially useful to check if a user has been granted a benefit.
 
 <!-- UsageSnippet language="python" operationID="benefits:grants" method="get" path="/v1/benefits/{id}/grants" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.benefits.grants(id="<value>", page=1, limit=10)
+    res = spaire.benefits.grants(id="<value>", page=1, limit=10)
 
     while res is not None:
         # Handle items

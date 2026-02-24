@@ -1,9 +1,9 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    Polar-OAS:
+    Spaire-OAS:
         inputs:
-            - location: https://api.polar.sh/openapi.json
+            - location: https://api.spairehq.com/openapi.json
         overlays:
             - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/security.yml
             - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/type_parameter.yml
@@ -12,17 +12,17 @@ sources:
             - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/timezone_enum.yml
             - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/event_metadata.yml
         registry:
-            location: registry.speakeasyapi.dev/polar/polar/polar-oas
+            location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas
 targets:
-    polar:
+    spaire:
         target: python
-        source: Polar-OAS
+        source: Spaire-OAS
         publish:
             pypi:
                 token: $pypi_token
         codeSamples:
             output: codeSamples.yaml
             registry:
-                location: registry.speakeasyapi.dev/polar/polar/polar-oas-py-code-samples
+                location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas-py-code-samples
             labelOverride:
                 fixedValue: Python (SDK)

@@ -15,13 +15,13 @@
 
 <!-- UsageSnippet language="python" operationID="customer_portal:downloadables:list" method="get" path="/v1/customer-portal/downloadables/" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.downloadables.list(security=polar_sdk.CustomerPortalDownloadablesListSecurity(
+    res = spaire.customer_portal.downloadables.list(security=spaire_sdk.CustomerPortalDownloadablesListSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ), page=1, limit=10)
 

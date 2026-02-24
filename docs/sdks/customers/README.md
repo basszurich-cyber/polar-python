@@ -27,14 +27,14 @@ List customers.
 
 <!-- UsageSnippet language="python" operationID="customers:list" method="get" path="/v1/customers/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.customers.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -77,20 +77,20 @@ Create a customer.
 
 <!-- UsageSnippet language="python" operationID="customers:create" method="post" path="/v1/customers/" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.create(request={
+    res = spaire.customers.create(request={
         "external_id": "usr_1337",
         "email": "customer@example.com",
         "name": "John Doe",
         "billing_address": {
-            "country": polar_sdk.CountryAlpha2Input.US,
+            "country": spaire_sdk.CountryAlpha2Input.US,
         },
         "tax_id": [
             "911144442",
@@ -137,14 +137,14 @@ Export customers as a CSV file.
 
 <!-- UsageSnippet language="python" operationID="customers:export" method="get" path="/v1/customers/export" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.export(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737")
+    res = spaire.customers.export(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737")
 
     # Handle response
     print(res)
@@ -179,14 +179,14 @@ Get a customer by ID.
 
 <!-- UsageSnippet language="python" operationID="customers:get" method="get" path="/v1/customers/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.get(id="<value>")
+    res = spaire.customers.get(id="<value>")
 
     # Handle response
     print(res)
@@ -222,19 +222,19 @@ Update a customer.
 
 <!-- UsageSnippet language="python" operationID="customers:update" method="patch" path="/v1/customers/{id}" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.update(id="<value>", customer_update={
+    res = spaire.customers.update(id="<value>", customer_update={
         "email": "customer@example.com",
         "name": "John Doe",
         "billing_address": {
-            "country": polar_sdk.CountryAlpha2Input.US,
+            "country": spaire_sdk.CountryAlpha2Input.US,
         },
         "tax_id": [
             "911144442",
@@ -292,14 +292,14 @@ Set `anonymize=true` to also anonymize PII for GDPR compliance.
 
 <!-- UsageSnippet language="python" operationID="customers:delete" method="delete" path="/v1/customers/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.customers.delete(id="<value>", anonymize=False)
+    spaire.customers.delete(id="<value>", anonymize=False)
 
     # Use the SDK ...
 
@@ -331,14 +331,14 @@ Get a customer by external ID.
 
 <!-- UsageSnippet language="python" operationID="customers:get_external" method="get" path="/v1/customers/external/{external_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.get_external(external_id="<id>")
+    res = spaire.customers.get_external(external_id="<id>")
 
     # Handle response
     print(res)
@@ -374,14 +374,14 @@ Update a customer by external ID.
 
 <!-- UsageSnippet language="python" operationID="customers:update_external" method="patch" path="/v1/customers/external/{external_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.update_external(external_id="<id>", customer_update_external_id={
+    res = spaire.customers.update_external(external_id="<id>", customer_update_external_id={
         "email": "customer@example.com",
         "name": "John Doe",
         "billing_address": None,
@@ -430,14 +430,14 @@ Set `anonymize=true` to also anonymize PII for GDPR compliance.
 
 <!-- UsageSnippet language="python" operationID="customers:delete_external" method="delete" path="/v1/customers/external/{external_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.customers.delete_external(external_id="<id>", anonymize=False)
+    spaire.customers.delete_external(external_id="<id>", anonymize=False)
 
     # Use the SDK ...
 
@@ -475,14 +475,14 @@ of a customer's status.
 
 <!-- UsageSnippet language="python" operationID="customers:get_state" method="get" path="/v1/customers/{id}/state" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.get_state(id="<value>")
+    res = spaire.customers.get_state(id="<value>")
 
     # Handle response
     print(res)
@@ -524,14 +524,14 @@ of a customer's status.
 
 <!-- UsageSnippet language="python" operationID="customers:get_state_external" method="get" path="/v1/customers/external/{external_id}/state" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customers.get_state_external(external_id="<id>")
+    res = spaire.customers.get_state_external(external_id="<id>")
 
     # Handle response
     print(res)

@@ -21,14 +21,14 @@ List checkout links.
 
 <!-- UsageSnippet language="python" operationID="checkout-links:list" method="get" path="/v1/checkout-links/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkout_links.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.checkout_links.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -69,14 +69,14 @@ Create a checkout link.
 
 <!-- UsageSnippet language="python" operationID="checkout-links:create" method="post" path="/v1/checkout-links/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkout_links.create(request={
+    res = spaire.checkout_links.create(request={
         "payment_processor": "stripe",
         "allow_discount_codes": True,
         "require_billing_address": False,
@@ -116,14 +116,14 @@ Get a checkout link by ID.
 
 <!-- UsageSnippet language="python" operationID="checkout-links:get" method="get" path="/v1/checkout-links/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkout_links.get(id="<value>")
+    res = spaire.checkout_links.get(id="<value>")
 
     # Handle response
     print(res)
@@ -159,14 +159,14 @@ Update a checkout link.
 
 <!-- UsageSnippet language="python" operationID="checkout-links:update" method="patch" path="/v1/checkout-links/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkout_links.update(id="<value>", checkout_link_update={})
+    res = spaire.checkout_links.update(id="<value>", checkout_link_update={})
 
     # Handle response
     print(res)
@@ -203,14 +203,14 @@ Delete a checkout link.
 
 <!-- UsageSnippet language="python" operationID="checkout-links:delete" method="delete" path="/v1/checkout-links/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.checkout_links.delete(id="<value>")
+    spaire.checkout_links.delete(id="<value>")
 
     # Use the SDK ...
 

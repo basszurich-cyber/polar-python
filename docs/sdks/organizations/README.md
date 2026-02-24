@@ -20,14 +20,14 @@ List organizations.
 
 <!-- UsageSnippet language="python" operationID="organizations:list" method="get" path="/v1/organizations/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -67,14 +67,14 @@ Create an organization.
 
 <!-- UsageSnippet language="python" operationID="organizations:create" method="post" path="/v1/organizations/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.create(request={
+    res = spaire.organizations.create(request={
         "name": "<value>",
         "slug": "<value>",
     })
@@ -112,14 +112,14 @@ Get an organization by ID.
 
 <!-- UsageSnippet language="python" operationID="organizations:get" method="get" path="/v1/organizations/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.get(id="1dbfc517-0bbf-4301-9ba8-555ca42b9737")
+    res = spaire.organizations.get(id="1dbfc517-0bbf-4301-9ba8-555ca42b9737")
 
     # Handle response
     print(res)
@@ -155,14 +155,14 @@ Update an organization.
 
 <!-- UsageSnippet language="python" operationID="organizations:update" method="patch" path="/v1/organizations/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.update(id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", organization_update={})
+    res = spaire.organizations.update(id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", organization_update={})
 
     # Handle response
     print(res)

@@ -20,14 +20,14 @@ List organization access tokens.
 
 <!-- UsageSnippet language="python" operationID="organization_access_tokens:list" method="get" path="/v1/organization-access-tokens/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organization_access_tokens.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.organization_access_tokens.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -65,14 +65,14 @@ with Polar(
 
 <!-- UsageSnippet language="python" operationID="organization_access_tokens:create" method="post" path="/v1/organization-access-tokens/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organization_access_tokens.create(request={
+    res = spaire.organization_access_tokens.create(request={
         "comment": "The Football Is Good For Training And Recreational Purposes",
         "scopes": [],
     })
@@ -108,14 +108,14 @@ with Polar(
 
 <!-- UsageSnippet language="python" operationID="organization_access_tokens:update" method="patch" path="/v1/organization-access-tokens/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organization_access_tokens.update(id="<value>", organization_access_token_update={})
+    res = spaire.organization_access_tokens.update(id="<value>", organization_access_token_update={})
 
     # Handle response
     print(res)
@@ -149,14 +149,14 @@ with Polar(
 
 <!-- UsageSnippet language="python" operationID="organization_access_tokens:delete" method="delete" path="/v1/organization-access-tokens/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.organization_access_tokens.delete(id="<value>")
+    spaire.organization_access_tokens.delete(id="<value>")
 
     # Use the SDK ...
 

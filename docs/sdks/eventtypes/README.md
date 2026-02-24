@@ -18,14 +18,14 @@ List event types with aggregated statistics.
 
 <!-- UsageSnippet language="python" operationID="event-types:list" method="get" path="/v1/event-types/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.event_types.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", root_events=False, page=1, limit=10)
+    res = spaire.event_types.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", root_events=False, page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -69,14 +69,14 @@ Update an event type's label.
 
 <!-- UsageSnippet language="python" operationID="event-types:update" method="patch" path="/v1/event-types/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.event_types.update(id="<value>", event_type_update={
+    res = spaire.event_types.update(id="<value>", event_type_update={
         "label": "<value>",
     })
 

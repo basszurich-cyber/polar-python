@@ -23,14 +23,14 @@ List checkout sessions.
 
 <!-- UsageSnippet language="python" operationID="checkouts:list" method="get" path="/v1/checkouts/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkouts.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.checkouts.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -75,18 +75,18 @@ Create a checkout session.
 
 <!-- UsageSnippet language="python" operationID="checkouts:create" method="post" path="/v1/checkouts/" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkouts.create(request={
+    res = spaire.checkouts.create(request={
         "customer_name": "John Doe",
         "customer_billing_address": {
-            "country": polar_sdk.CountryAlpha2Input.US,
+            "country": spaire_sdk.CountryAlpha2Input.US,
         },
         "products": [
             "<value 1>",
@@ -128,14 +128,14 @@ Get a checkout session by ID.
 
 <!-- UsageSnippet language="python" operationID="checkouts:get" method="get" path="/v1/checkouts/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkouts.get(id="<value>")
+    res = spaire.checkouts.get(id="<value>")
 
     # Handle response
     print(res)
@@ -171,18 +171,18 @@ Update a checkout session.
 
 <!-- UsageSnippet language="python" operationID="checkouts:update" method="patch" path="/v1/checkouts/{id}" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkouts.update(id="<value>", checkout_update={
+    res = spaire.checkouts.update(id="<value>", checkout_update={
         "customer_name": "John Doe",
         "customer_billing_address": {
-            "country": polar_sdk.CountryAlpha2Input.US,
+            "country": spaire_sdk.CountryAlpha2Input.US,
         },
     })
 
@@ -223,12 +223,12 @@ Get a checkout session by client secret.
 
 <!-- UsageSnippet language="python" operationID="checkouts:client_get" method="get" path="/v1/checkouts/client/{client_secret}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.checkouts.client_get(client_secret="<value>")
+    res = spaire.checkouts.client_get(client_secret="<value>")
 
     # Handle response
     print(res)
@@ -263,12 +263,12 @@ Update a checkout session by client secret.
 
 <!-- UsageSnippet language="python" operationID="checkouts:client_update" method="patch" path="/v1/checkouts/client/{client_secret}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.checkouts.client_update(client_secret="<value>", checkout_update_public={
+    res = spaire.checkouts.client_update(client_secret="<value>", checkout_update_public={
         "customer_name": "John Doe",
         "customer_billing_address": None,
         "allow_trial": False,
@@ -314,18 +314,18 @@ Orders and subscriptions will be processed.
 
 <!-- UsageSnippet language="python" operationID="checkouts:client_confirm" method="post" path="/v1/checkouts/client/{client_secret}/confirm" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.checkouts.client_confirm(client_secret="<value>", checkout_confirm_stripe={
+    res = spaire.checkouts.client_confirm(client_secret="<value>", checkout_confirm_stripe={
         "customer_name": "John Doe",
         "customer_billing_address": {
-            "country": polar_sdk.CountryAlpha2Input.US,
+            "country": spaire_sdk.CountryAlpha2Input.US,
         },
         "allow_trial": False,
     })

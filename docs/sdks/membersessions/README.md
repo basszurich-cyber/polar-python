@@ -20,14 +20,14 @@ and `seat_based_pricing_enabled` feature flags enabled.
 
 <!-- UsageSnippet language="python" operationID="member-sessions:create" method="post" path="/v1/member-sessions/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.member_sessions.create(request={
+    res = spaire.member_sessions.create(request={
         "member_id": "<value>",
         "return_url": "https://example.com/account",
     })

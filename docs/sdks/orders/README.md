@@ -22,14 +22,14 @@ List orders.
 
 <!-- UsageSnippet language="python" operationID="orders:list" method="get" path="/v1/orders/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.orders.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.orders.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -76,14 +76,14 @@ Export orders as a CSV file.
 
 <!-- UsageSnippet language="python" operationID="orders:export" method="get" path="/v1/orders/export" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.orders.export(organization_id=None)
+    res = spaire.orders.export(organization_id=None)
 
     # Handle response
     print(res)
@@ -119,14 +119,14 @@ Get an order by ID.
 
 <!-- UsageSnippet language="python" operationID="orders:get" method="get" path="/v1/orders/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.orders.get(id="<value>")
+    res = spaire.orders.get(id="<value>")
 
     # Handle response
     print(res)
@@ -162,17 +162,17 @@ Update an order.
 
 <!-- UsageSnippet language="python" operationID="orders:update" method="patch" path="/v1/orders/{id}" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.orders.update(id="<value>", order_update={
+    res = spaire.orders.update(id="<value>", order_update={
         "billing_address": {
-            "country": polar_sdk.CountryAlpha2Input.US,
+            "country": spaire_sdk.CountryAlpha2Input.US,
         },
     })
 
@@ -211,14 +211,14 @@ Trigger generation of an order's invoice.
 
 <!-- UsageSnippet language="python" operationID="orders:generate_invoice" method="post" path="/v1/orders/{id}/invoice" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.orders.generate_invoice(id="<value>")
+    res = spaire.orders.generate_invoice(id="<value>")
 
     # Handle response
     print(res)
@@ -254,14 +254,14 @@ Get an order's invoice data.
 
 <!-- UsageSnippet language="python" operationID="orders:invoice" method="get" path="/v1/orders/{id}/invoice" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.orders.invoice(id="<value>")
+    res = spaire.orders.invoice(id="<value>")
 
     # Handle response
     print(res)

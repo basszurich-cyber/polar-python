@@ -21,14 +21,14 @@ List products.
 
 <!-- UsageSnippet language="python" operationID="products:list" method="get" path="/v1/products/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.products.list(organization_id=None, page=1, limit=10)
+    res = spaire.products.list(organization_id=None, page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -74,14 +74,14 @@ Create a product.
 
 <!-- UsageSnippet language="python" operationID="products:create" method="post" path="/v1/products/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.products.create(request={
+    res = spaire.products.create(request={
         "name": "<value>",
         "prices": [],
         "organization_id": "1dbfc517-0bbf-4301-9ba8-555ca42b9737",
@@ -121,14 +121,14 @@ Get a product by ID.
 
 <!-- UsageSnippet language="python" operationID="products:get" method="get" path="/v1/products/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.products.get(id="<value>")
+    res = spaire.products.get(id="<value>")
 
     # Handle response
     print(res)
@@ -164,14 +164,14 @@ Update a product.
 
 <!-- UsageSnippet language="python" operationID="products:update" method="patch" path="/v1/products/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.products.update(id="<value>", product_update={})
+    res = spaire.products.update(id="<value>", product_update={})
 
     # Handle response
     print(res)
@@ -209,14 +209,14 @@ Update benefits granted by a product.
 
 <!-- UsageSnippet language="python" operationID="products:update_benefits" method="post" path="/v1/products/{id}/benefits" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.products.update_benefits(id="<value>", product_benefits_update={
+    res = spaire.products.update_benefits(id="<value>", product_benefits_update={
         "benefits": [
             "<value 1>",
             "<value 2>",

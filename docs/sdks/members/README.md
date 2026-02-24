@@ -21,14 +21,14 @@ List members with optional customer ID filter.
 
 <!-- UsageSnippet language="python" operationID="members:list_members" method="get" path="/v1/members/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.members.list_members(page=1, limit=10)
+    res = spaire.members.list_members(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -72,14 +72,14 @@ The authenticated user or organization must have access to the customer's organi
 
 <!-- UsageSnippet language="python" operationID="members:create_member" method="post" path="/v1/members/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.members.create_member(request={
+    res = spaire.members.create_member(request={
         "customer_id": "<value>",
         "email": "member@example.com",
         "name": "Jane Doe",
@@ -122,14 +122,14 @@ The authenticated user or organization must have access to the member's organiza
 
 <!-- UsageSnippet language="python" operationID="members:get_member" method="get" path="/v1/members/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.members.get_member(id="572bebad-ee17-4d04-a50f-6596a7d92cf3")
+    res = spaire.members.get_member(id="572bebad-ee17-4d04-a50f-6596a7d92cf3")
 
     # Handle response
     print(res)
@@ -168,14 +168,14 @@ The authenticated user or organization must have access to the member's organiza
 
 <!-- UsageSnippet language="python" operationID="members:update_member" method="patch" path="/v1/members/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.members.update_member(id="ab9b628a-6dbd-4f07-bcd6-163a8b5b7de4", member_update={
+    res = spaire.members.update_member(id="ab9b628a-6dbd-4f07-bcd6-163a8b5b7de4", member_update={
         "name": "Jane Doe",
     })
 
@@ -216,14 +216,14 @@ The authenticated user or organization must have access to the member's organiza
 
 <!-- UsageSnippet language="python" operationID="members:delete_member" method="delete" path="/v1/members/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.members.delete_member(id="913247e9-8f2b-4bd1-a47e-9842d173a7cb")
+    spaire.members.delete_member(id="913247e9-8f2b-4bd1-a47e-9842d173a7cb")
 
     # Use the SDK ...
 

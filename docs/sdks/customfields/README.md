@@ -21,14 +21,14 @@ List custom fields.
 
 <!-- UsageSnippet language="python" operationID="custom-fields:list" method="get" path="/v1/custom-fields/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.custom_fields.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.custom_fields.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -70,14 +70,14 @@ Create a custom field.
 
 <!-- UsageSnippet language="python" operationID="custom-fields:create" method="post" path="/v1/custom-fields/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.custom_fields.create(request={
+    res = spaire.custom_fields.create(request={
         "type": "select",
         "slug": "<value>",
         "name": "<value>",
@@ -119,14 +119,14 @@ Get a custom field by ID.
 
 <!-- UsageSnippet language="python" operationID="custom-fields:get" method="get" path="/v1/custom-fields/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.custom_fields.get(id="<value>")
+    res = spaire.custom_fields.get(id="<value>")
 
     # Handle response
     print(res)
@@ -162,14 +162,14 @@ Update a custom field.
 
 <!-- UsageSnippet language="python" operationID="custom-fields:update" method="patch" path="/v1/custom-fields/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.custom_fields.update(id="<value>", custom_field_update={
+    res = spaire.custom_fields.update(id="<value>", custom_field_update={
         "type": "date",
     })
 
@@ -208,14 +208,14 @@ Delete a custom field.
 
 <!-- UsageSnippet language="python" operationID="custom-fields:delete" method="delete" path="/v1/custom-fields/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.custom_fields.delete(id="<value>")
+    spaire.custom_fields.delete(id="<value>")
 
     # Use the SDK ...
 

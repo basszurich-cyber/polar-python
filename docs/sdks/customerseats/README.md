@@ -20,14 +20,14 @@
 
 <!-- UsageSnippet language="python" operationID="customer-seats:assign_seat" method="post" path="/v1/customer-seats" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customer_seats.assign_seat(request={})
+    res = spaire.customer_seats.assign_seat(request={})
 
     # Handle response
     print(res)
@@ -60,14 +60,14 @@ with Polar(
 
 <!-- UsageSnippet language="python" operationID="customer-seats:list_seats" method="get" path="/v1/customer-seats" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customer_seats.list_seats()
+    res = spaire.customer_seats.list_seats()
 
     # Handle response
     print(res)
@@ -101,14 +101,14 @@ with Polar(
 
 <!-- UsageSnippet language="python" operationID="customer-seats:revoke_seat" method="delete" path="/v1/customer-seats/{seat_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customer_seats.revoke_seat(seat_id="<id>")
+    res = spaire.customer_seats.revoke_seat(seat_id="<id>")
 
     # Handle response
     print(res)
@@ -141,14 +141,14 @@ with Polar(
 
 <!-- UsageSnippet language="python" operationID="customer-seats:resend_invitation" method="post" path="/v1/customer-seats/{seat_id}/resend" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customer_seats.resend_invitation(seat_id="<id>")
+    res = spaire.customer_seats.resend_invitation(seat_id="<id>")
 
     # Handle response
     print(res)
@@ -181,12 +181,12 @@ Get Claim Info
 
 <!-- UsageSnippet language="python" operationID="customer-seats:get_claim_info" method="get" path="/v1/customer-seats/claim/{invitation_token}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_seats.get_claim_info(invitation_token="<value>")
+    res = spaire.customer_seats.get_claim_info(invitation_token="<value>")
 
     # Handle response
     print(res)
@@ -219,12 +219,12 @@ Claim Seat
 
 <!-- UsageSnippet language="python" operationID="customer-seats:claim_seat" method="post" path="/v1/customer-seats/claim" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_seats.claim_seat(request={
+    res = spaire.customer_seats.claim_seat(request={
         "invitation_token": "<value>",
     })
 

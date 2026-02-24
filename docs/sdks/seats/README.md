@@ -19,13 +19,13 @@
 
 <!-- UsageSnippet language="python" operationID="customer_portal:seats:list_seats" method="get" path="/v1/customer-portal/seats" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.seats.list_seats(security=polar_sdk.CustomerPortalSeatsListSeatsSecurity(
+    res = spaire.customer_portal.seats.list_seats(security=spaire_sdk.CustomerPortalSeatsListSeatsSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ), subscription_id="<id>")
 
@@ -62,13 +62,13 @@ Assign Seat
 
 <!-- UsageSnippet language="python" operationID="customer_portal:seats:assign_seat" method="post" path="/v1/customer-portal/seats" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.seats.assign_seat(security=polar_sdk.CustomerPortalSeatsAssignSeatSecurity(
+    res = spaire.customer_portal.seats.assign_seat(security=spaire_sdk.CustomerPortalSeatsAssignSeatSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ), request={})
 
@@ -104,13 +104,13 @@ Revoke Seat
 
 <!-- UsageSnippet language="python" operationID="customer_portal:seats:revoke_seat" method="delete" path="/v1/customer-portal/seats/{seat_id}" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.seats.revoke_seat(security=polar_sdk.CustomerPortalSeatsRevokeSeatSecurity(
+    res = spaire.customer_portal.seats.revoke_seat(security=spaire_sdk.CustomerPortalSeatsRevokeSeatSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ), seat_id="4b3d74b3-01ff-4aac-bd03-320535cd5ce4")
 
@@ -146,13 +146,13 @@ Resend Invitation
 
 <!-- UsageSnippet language="python" operationID="customer_portal:seats:resend_invitation" method="post" path="/v1/customer-portal/seats/{seat_id}/resend" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.seats.resend_invitation(security=polar_sdk.CustomerPortalSeatsResendInvitationSecurity(
+    res = spaire.customer_portal.seats.resend_invitation(security=spaire_sdk.CustomerPortalSeatsResendInvitationSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ), seat_id="e3817437-8d53-4578-88d2-1dc256825965")
 
@@ -190,13 +190,13 @@ List all subscriptions where the authenticated customer has claimed a seat.
 
 <!-- UsageSnippet language="python" operationID="customer_portal:seats:list_claimed_subscriptions" method="get" path="/v1/customer-portal/seats/subscriptions" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.seats.list_claimed_subscriptions(security=polar_sdk.CustomerPortalSeatsListClaimedSubscriptionsSecurity(
+    res = spaire.customer_portal.seats.list_claimed_subscriptions(security=spaire_sdk.CustomerPortalSeatsListClaimedSubscriptionsSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ))
 

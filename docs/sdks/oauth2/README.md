@@ -19,14 +19,14 @@ Authorize
 
 <!-- UsageSnippet language="python" operationID="oauth2:authorize" method="get" path="/v1/oauth2/authorize" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.oauth2.authorize()
+    res = spaire.oauth2.authorize()
 
     # Handle response
     print(res)
@@ -57,12 +57,12 @@ Request an access token using a valid grant.
 
 <!-- UsageSnippet language="python" operationID="oauth2:request_token" method="post" path="/v1/oauth2/token" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.oauth2.token(request={
+    res = spaire.oauth2.token(request={
         "grant_type": "authorization_code",
         "client_id": "<id>",
         "client_secret": "<value>",
@@ -100,12 +100,12 @@ Revoke an access token or a refresh token.
 
 <!-- UsageSnippet language="python" operationID="oauth2:revoke_token" method="post" path="/v1/oauth2/revoke" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.oauth2.revoke(request={
+    res = spaire.oauth2.revoke(request={
         "token": "<value>",
         "client_id": "<id>",
         "client_secret": "<value>",
@@ -141,12 +141,12 @@ Get information about an access token.
 
 <!-- UsageSnippet language="python" operationID="oauth2:introspect_token" method="post" path="/v1/oauth2/introspect" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.oauth2.introspect(request={
+    res = spaire.oauth2.introspect(request={
         "token": "<value>",
         "client_id": "<id>",
         "client_secret": "<value>",
@@ -182,14 +182,14 @@ Get information about the authenticated user.
 
 <!-- UsageSnippet language="python" operationID="oauth2:userinfo" method="get" path="/v1/oauth2/userinfo" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.oauth2.userinfo()
+    res = spaire.oauth2.userinfo()
 
     # Handle response
     print(res)

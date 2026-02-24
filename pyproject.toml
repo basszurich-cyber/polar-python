@@ -1,9 +1,9 @@
 
 [project]
-name = "polar-sdk"
+name = "spaire-sdk"
 version = "0.28.4"
-description = "Polar SDK for Python"
-authors = [{ name = "Polar" },]
+description = "Spaire SDK for Python"
+authors = [{ name = "Spaire" },]
 readme = "README-PYPI.md"
 requires-python = ">=3.9.2"
 dependencies = [
@@ -15,14 +15,14 @@ dependencies = [
 ]
 
 [tool.poetry]
-repository = "https://github.com/polarsource/polar-python.git"
+repository = "https://github.com/Spaire-Tech/polar-python.git"
 packages = [
-    { include = "polar_sdk", from = "src" }
+    { include = "spaire_sdk", from = "src" }
 ]
-include = ["py.typed", "src/polar_sdk/py.typed"]
+include = ["py.typed", "src/spaire_sdk/py.typed"]
 
 [tool.setuptools.package-data]
-"*" = ["py.typed", "src/polar_sdk/py.typed"]
+"*" = ["py.typed", "src/spaire_sdk/py.typed"]
 
 [virtualenvs]
 in-project = true

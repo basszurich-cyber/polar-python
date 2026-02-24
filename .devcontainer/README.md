@@ -1,6 +1,6 @@
 
 <div align="center">
-    <a href="https://codespaces.new/polarsource/polar-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
+    <a href="https://codespaces.new/Spaire-Tech/polar-python.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
 </div>
 <br>
 

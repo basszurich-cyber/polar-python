@@ -23,14 +23,14 @@ Get license keys connected to the given organization & filters.
 
 <!-- UsageSnippet language="python" operationID="license_keys:list" method="get" path="/v1/license-keys/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.license_keys.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.license_keys.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -72,14 +72,14 @@ Get a license key.
 
 <!-- UsageSnippet language="python" operationID="license_keys:get" method="get" path="/v1/license-keys/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.license_keys.get(id="<value>")
+    res = spaire.license_keys.get(id="<value>")
 
     # Handle response
     print(res)
@@ -116,14 +116,14 @@ Update a license key.
 
 <!-- UsageSnippet language="python" operationID="license_keys:update" method="patch" path="/v1/license-keys/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.license_keys.update(id="<value>", license_key_update={})
+    res = spaire.license_keys.update(id="<value>", license_key_update={})
 
     # Handle response
     print(res)
@@ -161,14 +161,14 @@ Get a license key activation.
 
 <!-- UsageSnippet language="python" operationID="license_keys:get_activation" method="get" path="/v1/license-keys/{id}/activations/{activation_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.license_keys.get_activation(id="<value>", activation_id="<value>")
+    res = spaire.license_keys.get_activation(id="<value>", activation_id="<value>")
 
     # Handle response
     print(res)
@@ -206,14 +206,14 @@ Validate a license key.
 
 <!-- UsageSnippet language="python" operationID="license_keys:validate" method="post" path="/v1/license-keys/validate" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.license_keys.validate(request={
+    res = spaire.license_keys.validate(request={
         "key": "<key>",
         "organization_id": "<value>",
     })
@@ -252,14 +252,14 @@ Activate a license key instance.
 
 <!-- UsageSnippet language="python" operationID="license_keys:activate" method="post" path="/v1/license-keys/activate" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.license_keys.activate(request={
+    res = spaire.license_keys.activate(request={
         "key": "<key>",
         "organization_id": "<value>",
         "label": "<value>",
@@ -300,14 +300,14 @@ Deactivate a license key instance.
 
 <!-- UsageSnippet language="python" operationID="license_keys:deactivate" method="post" path="/v1/license-keys/deactivate" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.license_keys.deactivate(request={
+    spaire.license_keys.deactivate(request={
         "key": "<key>",
         "organization_id": "<value>",
         "activation_id": "<value>",

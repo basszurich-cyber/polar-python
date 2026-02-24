@@ -3,7 +3,7 @@ generation:
   devContainers:
     enabled: true
     schemaPath: https://api.polar.sh/openapi.json
-  sdkClassName: Polar
+  sdkClassName: Spaire
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -42,12 +42,12 @@ python:
     - object
   asyncMode: both
   authors:
-    - Polar
-  baseErrorName: PolarError
+    - Spaire
+  baseErrorName: SpaireError
   clientServerStatusCodesAsErrors: true
   constFieldCasing: upper
   defaultErrorName: SDKError
-  description: Polar SDK for Python
+  description: Spaire SDK for Python
   enableCustomCodeRegions: true
   enumFormat: enum
   fixFlags:
@@ -73,7 +73,7 @@ python:
   multipartArrayFormat: legacy
   outputModelSuffix: output
   packageManager: poetry
-  packageName: polar-sdk
+  packageName: spaire-sdk
   preApplyUnionDiscriminators: false
   pytestFilterWarnings: []
   pytestTimeout: 0

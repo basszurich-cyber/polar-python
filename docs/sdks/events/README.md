@@ -20,14 +20,14 @@ List events.
 
 <!-- UsageSnippet language="python" operationID="events:list" method="get" path="/v1/events/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.events.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.events.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     # Handle response
     print(res)
@@ -77,14 +77,14 @@ List event names.
 
 <!-- UsageSnippet language="python" operationID="events:list_names" method="get" path="/v1/events/names" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.events.list_names(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.events.list_names(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -128,14 +128,14 @@ Get an event by ID.
 
 <!-- UsageSnippet language="python" operationID="events:get" method="get" path="/v1/events/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.events.get(id="<value>")
+    res = spaire.events.get(id="<value>")
 
     # Handle response
     print(res)
@@ -171,14 +171,14 @@ Ingest batch of events.
 
 <!-- UsageSnippet language="python" operationID="events:ingest" method="post" path="/v1/events/ingest" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.events.ingest(request={
+    res = spaire.events.ingest(request={
         "events": [],
     })
 

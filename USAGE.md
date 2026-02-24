@@ -1,14 +1,14 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 # Synchronous Example
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -23,15 +23,15 @@ The same SDK client can also be used to make asynchronous requests by importing 
 ```python
 # Asynchronous Example
 import asyncio
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 async def main():
 
-    async with Polar(
+    async with Spaire(
         access_token="<YOUR_BEARER_TOKEN_HERE>",
-    ) as polar:
+    ) as spaire:
 
-        res = await polar.organizations.list_async(page=1, limit=10)
+        res = await spaire.organizations.list_async(page=1, limit=10)
 
         while res is not None:
             # Handle items

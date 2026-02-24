@@ -18,14 +18,14 @@ List customer meters.
 
 <!-- UsageSnippet language="python" operationID="customer_meters:list" method="get" path="/v1/customer-meters/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customer_meters.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.customer_meters.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -68,14 +68,14 @@ Get a customer meter by ID.
 
 <!-- UsageSnippet language="python" operationID="customer_meters:get" method="get" path="/v1/customer-meters/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customer_meters.get(id="<value>")
+    res = spaire.customer_meters.get(id="<value>")
 
     # Handle response
     print(res)

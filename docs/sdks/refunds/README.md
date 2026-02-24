@@ -18,14 +18,14 @@ List refunds.
 
 <!-- UsageSnippet language="python" operationID="refunds:list" method="get" path="/v1/refunds/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.refunds.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.refunds.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -71,17 +71,17 @@ Create a refund.
 
 <!-- UsageSnippet language="python" operationID="refunds:create" method="post" path="/v1/refunds/" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.refunds.create(request={
+    res = spaire.refunds.create(request={
         "order_id": "<value>",
-        "reason": polar_sdk.RefundReason.CUSTOMER_REQUEST,
+        "reason": spaire_sdk.RefundReason.CUSTOMER_REQUEST,
         "amount": 90,
     })
 

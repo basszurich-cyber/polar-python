@@ -1,7 +1,7 @@
 speakeasyVersion: 1.648.0
 sources:
-    Polar-OAS:
-        sourceNamespace: polar-oas
+    Spaire-OAS:
+        sourceNamespace: spaire-oas
         sourceRevisionDigest: sha256:ac1d60b4cc6260c4a5b529dd39b3e032ed58a3a2d3ea378bdd4e4fa72b131aa0
         sourceBlobDigest: sha256:096ba43e442c92fd4061be10bd3518deb9bcbeadf31f8fa9c4a0b573964612b4
         tags:
@@ -9,18 +9,18 @@ sources:
             - speakeasy-sdk-regen-1768932754
             - 0.1.0
 targets:
-    polar:
-        source: Polar-OAS
-        sourceNamespace: polar-oas
+    spaire:
+        source: Spaire-OAS
+        sourceNamespace: spaire-oas
         sourceRevisionDigest: sha256:ac1d60b4cc6260c4a5b529dd39b3e032ed58a3a2d3ea378bdd4e4fa72b131aa0
         sourceBlobDigest: sha256:096ba43e442c92fd4061be10bd3518deb9bcbeadf31f8fa9c4a0b573964612b4
-        codeSamplesNamespace: polar-oas-py-code-samples
+        codeSamplesNamespace: spaire-oas-py-code-samples
         codeSamplesRevisionDigest: sha256:6e5cc55e4e6ae0fee0a867f69aa42cda7100e4804535659ad9cdbf6730b9a8ac
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        Polar-OAS:
+        Spaire-OAS:
             inputs:
                 - location: https://api.polar.sh/openapi.json
             overlays:
@@ -31,17 +31,17 @@ workflow:
                 - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/timezone_enum.yml
                 - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/event_metadata.yml
             registry:
-                location: registry.speakeasyapi.dev/polar/polar/polar-oas
+                location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas
     targets:
-        polar:
+        spaire:
             target: python
-            source: Polar-OAS
+            source: Spaire-OAS
             publish:
                 pypi:
                     token: $pypi_token
             codeSamples:
                 output: codeSamples.yaml
                 registry:
-                    location: registry.speakeasyapi.dev/polar/polar/polar-oas-py-code-samples
+                    location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas-py-code-samples
                 labelOverride:
                     fixedValue: Python (SDK)

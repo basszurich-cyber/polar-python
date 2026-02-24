@@ -16,13 +16,13 @@ List wallets of the authenticated customer.
 
 <!-- UsageSnippet language="python" operationID="customer_portal:wallets:list" method="get" path="/v1/customer-portal/wallets/" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.wallets.list(security=polar_sdk.CustomerPortalWalletsListSecurity(
+    res = spaire.customer_portal.wallets.list(security=spaire_sdk.CustomerPortalWalletsListSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ), page=1, limit=10)
 
@@ -62,13 +62,13 @@ Get a wallet by ID for the authenticated customer.
 
 <!-- UsageSnippet language="python" operationID="customer_portal:wallets:get" method="get" path="/v1/customer-portal/wallets/{id}" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.wallets.get(security=polar_sdk.CustomerPortalWalletsGetSecurity(
+    res = spaire.customer_portal.wallets.get(security=spaire_sdk.CustomerPortalWalletsGetSecurity(
         customer_session="<YOUR_BEARER_TOKEN_HERE>",
     ), id="<value>")
 

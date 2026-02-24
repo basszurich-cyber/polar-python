@@ -24,14 +24,14 @@ List webhook endpoints.
 
 <!-- UsageSnippet language="python" operationID="webhooks:list_webhook_endpoints" method="get" path="/v1/webhooks/endpoints" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.webhooks.list_webhook_endpoints(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.webhooks.list_webhook_endpoints(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -70,19 +70,19 @@ Create a webhook endpoint.
 
 <!-- UsageSnippet language="python" operationID="webhooks:create_webhook_endpoint" method="post" path="/v1/webhooks/endpoints" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.webhooks.create_webhook_endpoint(request={
+    res = spaire.webhooks.create_webhook_endpoint(request={
         "url": "https://webhook.site/cb791d80-f26e-4f8c-be88-6e56054192b0",
-        "format_": polar_sdk.WebhookFormat.SLACK,
+        "format_": spaire_sdk.WebhookFormat.SLACK,
         "events": [
-            polar_sdk.WebhookEventType.SUBSCRIPTION_UNCANCELED,
+            spaire_sdk.WebhookEventType.SUBSCRIPTION_UNCANCELED,
         ],
         "organization_id": "1dbfc517-0bbf-4301-9ba8-555ca42b9737",
     })
@@ -120,14 +120,14 @@ Get a webhook endpoint by ID.
 
 <!-- UsageSnippet language="python" operationID="webhooks:get_webhook_endpoint" method="get" path="/v1/webhooks/endpoints/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.webhooks.get_webhook_endpoint(id="<value>")
+    res = spaire.webhooks.get_webhook_endpoint(id="<value>")
 
     # Handle response
     print(res)
@@ -163,14 +163,14 @@ Update a webhook endpoint.
 
 <!-- UsageSnippet language="python" operationID="webhooks:update_webhook_endpoint" method="patch" path="/v1/webhooks/endpoints/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.webhooks.update_webhook_endpoint(id="<value>", webhook_endpoint_update={
+    res = spaire.webhooks.update_webhook_endpoint(id="<value>", webhook_endpoint_update={
         "url": "https://webhook.site/cb791d80-f26e-4f8c-be88-6e56054192b0",
     })
 
@@ -209,14 +209,14 @@ Delete a webhook endpoint.
 
 <!-- UsageSnippet language="python" operationID="webhooks:delete_webhook_endpoint" method="delete" path="/v1/webhooks/endpoints/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.webhooks.delete_webhook_endpoint(id="<value>")
+    spaire.webhooks.delete_webhook_endpoint(id="<value>")
 
     # Use the SDK ...
 
@@ -247,14 +247,14 @@ Regenerate a webhook endpoint secret.
 
 <!-- UsageSnippet language="python" operationID="webhooks:reset_webhook_endpoint_secret" method="patch" path="/v1/webhooks/endpoints/{id}/secret" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.webhooks.reset_webhook_endpoint_secret(id="<value>")
+    res = spaire.webhooks.reset_webhook_endpoint_secret(id="<value>")
 
     # Handle response
     print(res)
@@ -292,14 +292,14 @@ Deliveries are all the attempts to deliver a webhook event to an endpoint.
 
 <!-- UsageSnippet language="python" operationID="webhooks:list_webhook_deliveries" method="get" path="/v1/webhooks/deliveries" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.webhooks.list_webhook_deliveries(page=1, limit=10)
+    res = spaire.webhooks.list_webhook_deliveries(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -344,14 +344,14 @@ Schedule the re-delivery of a webhook event.
 
 <!-- UsageSnippet language="python" operationID="webhooks:redeliver_webhook_event" method="post" path="/v1/webhooks/events/{id}/redeliver" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.webhooks.redeliver_webhook_event(id="<value>")
+    res = spaire.webhooks.redeliver_webhook_event(id="<value>")
 
     # Handle response
     print(res)

@@ -18,14 +18,14 @@ Create an OAuth2 client.
 
 <!-- UsageSnippet language="python" operationID="oauth2:clients:oauth2:create_client" method="post" path="/v1/oauth2/register" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.oauth2.clients.create(request={
+    res = spaire.oauth2.clients.create(request={
         "redirect_uris": [
             "https://impolite-hippodrome.com/",
             "https://acidic-tomography.net/",
@@ -64,14 +64,14 @@ Get an OAuth2 client by Client ID.
 
 <!-- UsageSnippet language="python" operationID="oauth2:clients:oauth2:get_client" method="get" path="/v1/oauth2/register/{client_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.oauth2.clients.get(client_id="<id>")
+    res = spaire.oauth2.clients.get(client_id="<id>")
 
     # Handle response
     print(res)
@@ -104,14 +104,14 @@ Update an OAuth2 client.
 
 <!-- UsageSnippet language="python" operationID="oauth2:clients:oauth2:update_client" method="put" path="/v1/oauth2/register/{client_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.oauth2.clients.update(client_id="<id>", o_auth2_client_configuration_update={
+    res = spaire.oauth2.clients.update(client_id="<id>", o_auth2_client_configuration_update={
         "redirect_uris": [
             "https://classic-cantaloupe.org",
             "https://corrupt-status.biz/",
@@ -152,14 +152,14 @@ Delete an OAuth2 client.
 
 <!-- UsageSnippet language="python" operationID="oauth2:clients:oauth2:delete_client" method="delete" path="/v1/oauth2/register/{client_id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.oauth2.clients.delete(client_id="<id>")
+    res = spaire.oauth2.clients.delete(client_id="<id>")
 
     # Handle response
     print(res)

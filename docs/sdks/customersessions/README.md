@@ -20,14 +20,14 @@ create a member session for the owner member of the customer.
 
 <!-- UsageSnippet language="python" operationID="customer-sessions:create" method="post" path="/v1/customer-sessions/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.customer_sessions.create(request={
+    res = spaire.customer_sessions.create(request={
         "external_customer_id": "<id>",
     })
 

@@ -21,14 +21,14 @@ List meters.
 
 <!-- UsageSnippet language="python" operationID="meters:list" method="get" path="/v1/meters/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.meters.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.meters.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -71,28 +71,28 @@ Create a meter.
 
 <!-- UsageSnippet language="python" operationID="meters:create" method="post" path="/v1/meters/" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.meters.create(request={
+    res = spaire.meters.create(request={
         "name": "<value>",
         "filter_": {
-            "conjunction": polar_sdk.FilterConjunction.OR,
+            "conjunction": spaire_sdk.FilterConjunction.OR,
             "clauses": [
                 {
                     "property": "<value>",
-                    "operator": polar_sdk.FilterOperator.NE,
+                    "operator": spaire_sdk.FilterOperator.NE,
                     "value": "<value>",
                 },
             ],
         },
         "aggregation": {
-            "func": polar_sdk.Func.SUM,
+            "func": spaire_sdk.Func.SUM,
             "property": "<value>",
         },
         "organization_id": "1dbfc517-0bbf-4301-9ba8-555ca42b9737",
@@ -131,14 +131,14 @@ Get a meter by ID.
 
 <!-- UsageSnippet language="python" operationID="meters:get" method="get" path="/v1/meters/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.meters.get(id="<value>")
+    res = spaire.meters.get(id="<value>")
 
     # Handle response
     print(res)
@@ -174,14 +174,14 @@ Update a meter.
 
 <!-- UsageSnippet language="python" operationID="meters:update" method="patch" path="/v1/meters/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.meters.update(id="<value>", meter_update={})
+    res = spaire.meters.update(id="<value>", meter_update={})
 
     # Handle response
     print(res)
@@ -218,16 +218,16 @@ Get quantities of a meter over a time period.
 
 <!-- UsageSnippet language="python" operationID="meters:quantities" method="get" path="/v1/meters/{id}/quantities" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
-from polar_sdk.utils import parse_datetime
+import spaire_sdk
+from spaire_sdk import Spaire
+from spaire_sdk.utils import parse_datetime
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.meters.quantities(id="<value>", start_timestamp=parse_datetime("2025-11-25T04:37:16.823Z"), end_timestamp=parse_datetime("2025-11-26T17:06:00.727Z"), interval=polar_sdk.TimeInterval.DAY)
+    res = spaire.meters.quantities(id="<value>", start_timestamp=parse_datetime("2025-11-25T04:37:16.823Z"), end_timestamp=parse_datetime("2025-11-26T17:06:00.727Z"), interval=spaire_sdk.TimeInterval.DAY)
 
     # Handle response
     print(res)

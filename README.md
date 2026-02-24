@@ -1,7 +1,7 @@
-# polar-sdk
+# spaire-sdk
 
 <div align="left">
-    <a href="https://www.speakeasy.com/?utm_source=polar-sdk&utm_campaign=python"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
+    <a href="https://www.speakeasy.com/?utm_source=spaire-sdk&utm_campaign=python"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
     <a href="https://opensource.org/licenses/MIT">
         <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
     </a>
@@ -10,7 +10,7 @@
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [polar-sdk](#polar-sdk)
+* [spaire-sdk](#spaire-sdk)
   * [SDK Installation](#sdk-installation)
   * [IDE Support](#ide-support)
   * [SDK Example Usage](#sdk-example-usage)
@@ -45,7 +45,7 @@ The SDK can be installed with *uv*, *pip*, or *poetry* package managers.
 *uv* is a fast Python package installer and resolver, designed as a drop-in replacement for pip and pip-tools. It's recommended for its speed and modern Python tooling capabilities.
 
 ```bash
-uv add polar-sdk
+uv add spaire-sdk
 ```
 
 ### PIP
@@ -53,7 +53,7 @@ uv add polar-sdk
 *PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
-pip install polar-sdk
+pip install spaire-sdk
 ```
 
 ### Poetry
@@ -61,7 +61,7 @@ pip install polar-sdk
 *Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
 ```bash
-poetry add polar-sdk
+poetry add spaire-sdk
 ```
 
 ### Shell and script usage with `uv`
@@ -69,7 +69,7 @@ poetry add polar-sdk
 You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
 
 ```shell
-uvx --from polar-sdk python
+uvx --from spaire-sdk python
 ```
 
 It's also possible to write a standalone Python script without needing to set up a whole project like so:
@@ -79,13 +79,13 @@ It's also possible to write a standalone Python script without needing to set up
 # /// script
 # requires-python = ">=3.9"
 # dependencies = [
-#     "polar-sdk",
+#     "spaire-sdk",
 # ]
 # ///
 
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
-sdk = Polar(
+sdk = Spaire(
   # SDK arguments
 )
 
@@ -113,14 +113,14 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 
 ```python
 # Synchronous Example
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -135,15 +135,15 @@ The same SDK client can also be used to make asynchronous requests by importing 
 ```python
 # Asynchronous Example
 import asyncio
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 async def main():
 
-    async with Polar(
+    async with Spaire(
         access_token="<YOUR_BEARER_TOKEN_HERE>",
-    ) as polar:
+    ) as spaire:
 
-        res = await polar.organizations.list_async(page=1, limit=10)
+        res = await spaire.organizations.list_async(page=1, limit=10)
 
         while res is not None:
             # Handle items
@@ -160,7 +160,7 @@ The SDK has built-in support to validate webhook events. Here is an example with
 
 ```py
 from flask import Flask, request
-from polar_sdk.webhooks import validate_event, WebhookVerificationError
+from spaire_sdk.webhooks import validate_event, WebhookVerificationError
 
 app = Flask(__name__)
 
@@ -230,56 +230,56 @@ def webhook():
 * [list](docs/sdks/customermeters/README.md#list) - List Customer Meters
 * [get](docs/sdks/customermeters/README.md#get) - Get Customer Meter
 
-#### [customer_portal.benefit_grants](docs/sdks/polarbenefitgrants/README.md)
+#### [customer_portal.benefit_grants](docs/sdks/spairebenefitgrants/README.md)
 
-* [list](docs/sdks/polarbenefitgrants/README.md#list) - List Benefit Grants
-* [get](docs/sdks/polarbenefitgrants/README.md#get) - Get Benefit Grant
-* [update](docs/sdks/polarbenefitgrants/README.md#update) - Update Benefit Grant
+* [list](docs/sdks/spairebenefitgrants/README.md#list) - List Benefit Grants
+* [get](docs/sdks/spairebenefitgrants/README.md#get) - Get Benefit Grant
+* [update](docs/sdks/spairebenefitgrants/README.md#update) - Update Benefit Grant
 
-#### [customer_portal.customer_meters](docs/sdks/polarcustomermeters/README.md)
+#### [customer_portal.customer_meters](docs/sdks/spairecustomermeters/README.md)
 
-* [list](docs/sdks/polarcustomermeters/README.md#list) - List Meters
-* [get](docs/sdks/polarcustomermeters/README.md#get) - Get Customer Meter
+* [list](docs/sdks/spairecustomermeters/README.md#list) - List Meters
+* [get](docs/sdks/spairecustomermeters/README.md#get) - Get Customer Meter
 
 #### [customer_portal.customer_session](docs/sdks/customersessionsdk/README.md)
 
 * [introspect](docs/sdks/customersessionsdk/README.md#introspect) - Introspect Customer Session
 * [get_authenticated_user](docs/sdks/customersessionsdk/README.md#get_authenticated_user) - Get Authenticated Portal User
 
-#### [customer_portal.customers](docs/sdks/polarcustomers/README.md)
+#### [customer_portal.customers](docs/sdks/spairecustomers/README.md)
 
-* [get](docs/sdks/polarcustomers/README.md#get) - Get Customer
-* [update](docs/sdks/polarcustomers/README.md#update) - Update Customer
-* [list_payment_methods](docs/sdks/polarcustomers/README.md#list_payment_methods) - List Customer Payment Methods
-* [add_payment_method](docs/sdks/polarcustomers/README.md#add_payment_method) - Add Customer Payment Method
-* [confirm_payment_method](docs/sdks/polarcustomers/README.md#confirm_payment_method) - Confirm Customer Payment Method
-* [delete_payment_method](docs/sdks/polarcustomers/README.md#delete_payment_method) - Delete Customer Payment Method
+* [get](docs/sdks/spairecustomers/README.md#get) - Get Customer
+* [update](docs/sdks/spairecustomers/README.md#update) - Update Customer
+* [list_payment_methods](docs/sdks/spairecustomers/README.md#list_payment_methods) - List Customer Payment Methods
+* [add_payment_method](docs/sdks/spairecustomers/README.md#add_payment_method) - Add Customer Payment Method
+* [confirm_payment_method](docs/sdks/spairecustomers/README.md#confirm_payment_method) - Confirm Customer Payment Method
+* [delete_payment_method](docs/sdks/spairecustomers/README.md#delete_payment_method) - Delete Customer Payment Method
 
 #### [customer_portal.downloadables](docs/sdks/downloadables/README.md)
 
 * [list](docs/sdks/downloadables/README.md#list) - List Downloadables
 
-#### [customer_portal.license_keys](docs/sdks/polarlicensekeys/README.md)
+#### [customer_portal.license_keys](docs/sdks/spairelicensekeys/README.md)
 
-* [list](docs/sdks/polarlicensekeys/README.md#list) - List License Keys
-* [get](docs/sdks/polarlicensekeys/README.md#get) - Get License Key
-* [validate](docs/sdks/polarlicensekeys/README.md#validate) - Validate License Key
-* [activate](docs/sdks/polarlicensekeys/README.md#activate) - Activate License Key
-* [deactivate](docs/sdks/polarlicensekeys/README.md#deactivate) - Deactivate License Key
+* [list](docs/sdks/spairelicensekeys/README.md#list) - List License Keys
+* [get](docs/sdks/spairelicensekeys/README.md#get) - Get License Key
+* [validate](docs/sdks/spairelicensekeys/README.md#validate) - Validate License Key
+* [activate](docs/sdks/spairelicensekeys/README.md#activate) - Activate License Key
+* [deactivate](docs/sdks/spairelicensekeys/README.md#deactivate) - Deactivate License Key
 
-#### [customer_portal.orders](docs/sdks/polarorders/README.md)
+#### [customer_portal.orders](docs/sdks/spaireorders/README.md)
 
-* [list](docs/sdks/polarorders/README.md#list) - List Orders
-* [get](docs/sdks/polarorders/README.md#get) - Get Order
-* [update](docs/sdks/polarorders/README.md#update) - Update Order
-* [generate_invoice](docs/sdks/polarorders/README.md#generate_invoice) - Generate Order Invoice
-* [invoice](docs/sdks/polarorders/README.md#invoice) - Get Order Invoice
-* [get_payment_status](docs/sdks/polarorders/README.md#get_payment_status) - Get Order Payment Status
-* [confirm_retry_payment](docs/sdks/polarorders/README.md#confirm_retry_payment) - Confirm Retry Payment
+* [list](docs/sdks/spaireorders/README.md#list) - List Orders
+* [get](docs/sdks/spaireorders/README.md#get) - Get Order
+* [update](docs/sdks/spaireorders/README.md#update) - Update Order
+* [generate_invoice](docs/sdks/spaireorders/README.md#generate_invoice) - Generate Order Invoice
+* [invoice](docs/sdks/spaireorders/README.md#invoice) - Get Order Invoice
+* [get_payment_status](docs/sdks/spaireorders/README.md#get_payment_status) - Get Order Payment Status
+* [confirm_retry_payment](docs/sdks/spaireorders/README.md#confirm_retry_payment) - Confirm Retry Payment
 
-#### [customer_portal.organizations](docs/sdks/polarorganizations/README.md)
+#### [customer_portal.organizations](docs/sdks/spaireorganizations/README.md)
 
-* [get](docs/sdks/polarorganizations/README.md#get) - Get Organization
+* [get](docs/sdks/spaireorganizations/README.md#get) - Get Organization
 
 #### [customer_portal.seats](docs/sdks/seats/README.md)
 
@@ -289,12 +289,12 @@ def webhook():
 * [resend_invitation](docs/sdks/seats/README.md#resend_invitation) - Resend Invitation
 * [list_claimed_subscriptions](docs/sdks/seats/README.md#list_claimed_subscriptions) - List Claimed Subscriptions
 
-#### [customer_portal.subscriptions](docs/sdks/polarsubscriptions/README.md)
+#### [customer_portal.subscriptions](docs/sdks/spairesubscriptions/README.md)
 
-* [list](docs/sdks/polarsubscriptions/README.md#list) - List Subscriptions
-* [get](docs/sdks/polarsubscriptions/README.md#get) - Get Subscription
-* [update](docs/sdks/polarsubscriptions/README.md#update) - Update Subscription
-* [cancel](docs/sdks/polarsubscriptions/README.md#cancel) - Cancel Subscription
+* [list](docs/sdks/spairesubscriptions/README.md#list) - List Subscriptions
+* [get](docs/sdks/spairesubscriptions/README.md#get) - Get Subscription
+* [update](docs/sdks/spairesubscriptions/README.md#update) - Update Subscription
+* [cancel](docs/sdks/spairesubscriptions/README.md#cancel) - Cancel Subscription
 
 #### [customer_portal.wallets](docs/sdks/wallets/README.md)
 
@@ -482,15 +482,15 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from polar_sdk import Polar
-from polar_sdk.utils import BackoffStrategy, RetryConfig
+from spaire_sdk import Spaire
+from spaire_sdk.utils import BackoffStrategy, RetryConfig
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10,
+    res = spaire.organizations.list(page=1, limit=10,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     while res is not None:
@@ -502,16 +502,16 @@ with Polar(
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from polar_sdk import Polar
-from polar_sdk.utils import BackoffStrategy, RetryConfig
+from spaire_sdk import Spaire
+from spaire_sdk.utils import BackoffStrategy, RetryConfig
 
 
-with Polar(
+with Spaire(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -524,7 +524,7 @@ with Polar(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-[`PolarError`](./src/polar_sdk/models/polarerror.py) is the base class for all HTTP error responses. It has the following properties:
+[`SpaireError`](./src/spaire_sdk/models/spaireerror.py) is the base class for all HTTP error responses. It has the following properties:
 
 | Property           | Type             | Description                                                                             |
 | ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
@@ -537,17 +537,17 @@ with Polar(
 
 ### Example
 ```python
-import polar_sdk
-from polar_sdk import Polar, models
+import spaire_sdk
+from spaire_sdk import Spaire, models
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
     res = None
     try:
 
-        res = polar.organizations.list(page=1, limit=10)
+        res = spaire.organizations.list(page=1, limit=10)
 
         while res is not None:
             # Handle items
@@ -555,7 +555,7 @@ with Polar(
             res = res.next()
 
 
-    except models.PolarError as e:
+    except models.SpaireError as e:
         # The base class for HTTP error responses
         print(e.message)
         print(e.status_code)
@@ -565,13 +565,13 @@ with Polar(
 
         # Depending on the method different errors may be thrown
         if isinstance(e, models.HTTPValidationError):
-            print(e.data.detail)  # Optional[List[polar_sdk.ValidationError]]
+            print(e.data.detail)  # Optional[List[spaire_sdk.ValidationError]]
 ```
 
 ### Error Classes
 **Primary errors:**
-* [`PolarError`](./src/polar_sdk/models/polarerror.py): The base class for HTTP error responses.
-  * [`HTTPValidationError`](./src/polar_sdk/models/httpvalidationerror.py): Validation Error. Status code `422`. *
+* [`SpaireError`](./src/spaire_sdk/models/spaireerror.py): The base class for HTTP error responses.
+  * [`HTTPValidationError`](./src/spaire_sdk/models/httpvalidationerror.py): Validation Error. Status code `422`. *
 
 <details><summary>Less common errors (23)</summary>
 
@@ -583,26 +583,26 @@ with Polar(
     * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
 
 
-**Inherit from [`PolarError`](./src/polar_sdk/models/polarerror.py)**:
-* [`ResourceNotFound`](./src/polar_sdk/models/resourcenotfound.py): Status code `404`. Applicable to 82 of 166 methods.*
-* [`NotPermitted`](./src/polar_sdk/models/notpermitted.py): Status code `403`. Applicable to 10 of 166 methods.*
-* [`Unauthorized`](./src/polar_sdk/models/unauthorized.py): Not authorized to manage license key. Status code `401`. Applicable to 5 of 166 methods.*
-* [`AlreadyCanceledSubscription`](./src/polar_sdk/models/alreadycanceledsubscription.py): Status code `403`. Applicable to 4 of 166 methods.*
-* [`AlreadyActiveSubscriptionError`](./src/polar_sdk/models/alreadyactivesubscriptionerror.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
-* [`NotOpenCheckout`](./src/polar_sdk/models/notopencheckout.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
-* [`PaymentNotReady`](./src/polar_sdk/models/paymentnotready.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
-* [`TrialAlreadyRedeemed`](./src/polar_sdk/models/trialalreadyredeemed.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
-* [`ExpiredCheckoutError`](./src/polar_sdk/models/expiredcheckouterror.py): The checkout session is expired. Status code `410`. Applicable to 3 of 166 methods.*
-* [`SubscriptionLocked`](./src/polar_sdk/models/subscriptionlocked.py): Subscription is pending an update. Status code `409`. Applicable to 2 of 166 methods.*
-* [`MissingInvoiceBillingDetails`](./src/polar_sdk/models/missinginvoicebillingdetails.py): Order is not paid or is missing billing name or address. Status code `422`. Applicable to 2 of 166 methods.*
-* [`NotPaidOrder`](./src/polar_sdk/models/notpaidorder.py): Order is not paid or is missing billing name or address. Status code `422`. Applicable to 2 of 166 methods.*
-* [`PaymentError`](./src/polar_sdk/models/paymenterror.py): The payment failed. Status code `400`. Applicable to 1 of 166 methods.*
-* [`CustomerNotReady`](./src/polar_sdk/models/customernotready.py): Customer is not ready to confirm a payment method. Status code `400`. Applicable to 1 of 166 methods.*
-* [`PaymentMethodInUseByActiveSubscription`](./src/polar_sdk/models/paymentmethodinusebyactivesubscription.py): Payment method is used by active subscription(s). Status code `400`. Applicable to 1 of 166 methods.*
-* [`RefundedAlready`](./src/polar_sdk/models/refundedalready.py): Order is already fully refunded. Status code `403`. Applicable to 1 of 166 methods.*
-* [`PaymentAlreadyInProgress`](./src/polar_sdk/models/paymentalreadyinprogress.py): Payment already in progress. Status code `409`. Applicable to 1 of 166 methods.*
-* [`OrderNotEligibleForRetry`](./src/polar_sdk/models/ordernoteligibleforretry.py): Order not eligible for retry or payment confirmation failed. Status code `422`. Applicable to 1 of 166 methods.*
-* [`ResponseValidationError`](./src/polar_sdk/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+**Inherit from [`SpaireError`](./src/spaire_sdk/models/spaireerror.py)**:
+* [`ResourceNotFound`](./src/spaire_sdk/models/resourcenotfound.py): Status code `404`. Applicable to 82 of 166 methods.*
+* [`NotPermitted`](./src/spaire_sdk/models/notpermitted.py): Status code `403`. Applicable to 10 of 166 methods.*
+* [`Unauthorized`](./src/spaire_sdk/models/unauthorized.py): Not authorized to manage license key. Status code `401`. Applicable to 5 of 166 methods.*
+* [`AlreadyCanceledSubscription`](./src/spaire_sdk/models/alreadycanceledsubscription.py): Status code `403`. Applicable to 4 of 166 methods.*
+* [`AlreadyActiveSubscriptionError`](./src/spaire_sdk/models/alreadyactivesubscriptionerror.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
+* [`NotOpenCheckout`](./src/spaire_sdk/models/notopencheckout.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
+* [`PaymentNotReady`](./src/spaire_sdk/models/paymentnotready.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
+* [`TrialAlreadyRedeemed`](./src/spaire_sdk/models/trialalreadyredeemed.py): The checkout is expired, the customer already has an active subscription, or the organization is not ready to accept payments. Status code `403`. Applicable to 3 of 166 methods.*
+* [`ExpiredCheckoutError`](./src/spaire_sdk/models/expiredcheckouterror.py): The checkout session is expired. Status code `410`. Applicable to 3 of 166 methods.*
+* [`SubscriptionLocked`](./src/spaire_sdk/models/subscriptionlocked.py): Subscription is pending an update. Status code `409`. Applicable to 2 of 166 methods.*
+* [`MissingInvoiceBillingDetails`](./src/spaire_sdk/models/missinginvoicebillingdetails.py): Order is not paid or is missing billing name or address. Status code `422`. Applicable to 2 of 166 methods.*
+* [`NotPaidOrder`](./src/spaire_sdk/models/notpaidorder.py): Order is not paid or is missing billing name or address. Status code `422`. Applicable to 2 of 166 methods.*
+* [`PaymentError`](./src/spaire_sdk/models/paymenterror.py): The payment failed. Status code `400`. Applicable to 1 of 166 methods.*
+* [`CustomerNotReady`](./src/spaire_sdk/models/customernotready.py): Customer is not ready to confirm a payment method. Status code `400`. Applicable to 1 of 166 methods.*
+* [`PaymentMethodInUseByActiveSubscription`](./src/spaire_sdk/models/paymentmethodinusebyactivesubscription.py): Payment method is used by active subscription(s). Status code `400`. Applicable to 1 of 166 methods.*
+* [`RefundedAlready`](./src/spaire_sdk/models/refundedalready.py): Order is already fully refunded. Status code `403`. Applicable to 1 of 166 methods.*
+* [`PaymentAlreadyInProgress`](./src/spaire_sdk/models/paymentalreadyinprogress.py): Payment already in progress. Status code `409`. Applicable to 1 of 166 methods.*
+* [`OrderNotEligibleForRetry`](./src/spaire_sdk/models/ordernoteligibleforretry.py): Order not eligible for retry or payment confirmation failed. Status code `422`. Applicable to 1 of 166 methods.*
+* [`ResponseValidationError`](./src/spaire_sdk/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
 
 </details>
 
@@ -624,15 +624,15 @@ You can override the default server globally by passing a server name to the `se
 #### Example
 
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     server="production",
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -645,15 +645,15 @@ with Polar(
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     server_url="https://api.polar.sh",
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -672,17 +672,17 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
-s = Polar(client=http_client)
+s = Spaire(client=http_client)
 ```
 
 or you could wrap the client with your own custom logic:
 ```python
-from polar_sdk import Polar
-from polar_sdk.httpclient import AsyncHttpClient
+from spaire_sdk import Spaire
+from spaire_sdk.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -740,7 +740,7 @@ class CustomClient(AsyncHttpClient):
             extensions=extensions,
         )
 
-s = Polar(async_client=CustomClient(httpx.AsyncClient()))
+s = Spaire(async_client=CustomClient(httpx.AsyncClient()))
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -757,14 +757,14 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `access_token` parameter must be set when initializing the SDK client instance. For example:
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -777,13 +777,13 @@ with Polar(
 
 Some operations in this SDK require the security scheme to be specified at the request level. For example:
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar() as polar:
+with Spaire() as spaire:
 
-    res = polar.customer_portal.benefit_grants.list(security=polar_sdk.CustomerPortalBenefitGrantsListSecurity(
+    res = spaire.customer_portal.benefit_grants.list(security=spaire_sdk.CustomerPortalBenefitGrantsListSecurity(
 
     ), page=1, limit=10)
 
@@ -798,26 +798,26 @@ with Polar() as polar:
 <!-- Start Resource Management [resource-management] -->
 ## Resource Management
 
-The `Polar` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+The `Spaire` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
 
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 def main():
 
-    with Polar(
+    with Spaire(
         access_token="<YOUR_BEARER_TOKEN_HERE>",
-    ) as polar:
+    ) as spaire:
         # Rest of application here...
 
 
 # Or when using async:
 async def amain():
 
-    async with Polar(
+    async with Spaire(
         access_token="<YOUR_BEARER_TOKEN_HERE>",
-    ) as polar:
+    ) as spaire:
         # Rest of application here...
 ```
 <!-- End Resource Management [resource-management] -->
@@ -829,11 +829,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = Polar(debug_logger=logging.getLogger("polar_sdk"))
+s = Spaire(debug_logger=logging.getLogger("spaire_sdk"))
 ```
 <!-- End Debugging [debug] -->
 
@@ -846,14 +846,14 @@ return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.organizations.list(page=1, limit=10)
+    res = spaire.organizations.list(page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -866,7 +866,7 @@ with Polar(
 <!-- Start Summary [summary] -->
 ## Summary
 
-Polar API: Polar HTTP and Webhooks API
+Spaire API: Spaire HTTP and Webhooks API
 
 Read the docs at https://polar.sh/docs/api-reference
 <!-- End Summary [summary] -->
@@ -886,4 +886,4 @@ looking for the latest version.
 While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
 We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
 
-### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=polar-sdk&utm_campaign=python)
+### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=spaire-sdk&utm_campaign=python)

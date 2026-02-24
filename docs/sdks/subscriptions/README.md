@@ -22,14 +22,14 @@ List subscriptions.
 
 <!-- UsageSnippet language="python" operationID="subscriptions:list" method="get" path="/v1/subscriptions/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.subscriptions.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.subscriptions.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -81,14 +81,14 @@ No initial order will be created and no confirmation email will be sent.
 
 <!-- UsageSnippet language="python" operationID="subscriptions:create" method="post" path="/v1/subscriptions/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.subscriptions.create(request={
+    res = spaire.subscriptions.create(request={
         "product_id": "d8dd2de1-21b7-4a41-8bc3-ce909c0cfe23",
         "customer_id": "992fae2a-2a17-4b7a-8d9e-e287cf90131b",
     })
@@ -126,14 +126,14 @@ Export subscriptions as a CSV file.
 
 <!-- UsageSnippet language="python" operationID="subscriptions:export" method="get" path="/v1/subscriptions/export" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.subscriptions.export(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737")
+    res = spaire.subscriptions.export(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737")
 
     # Handle response
     print(res)
@@ -168,14 +168,14 @@ Get a subscription by ID.
 
 <!-- UsageSnippet language="python" operationID="subscriptions:get" method="get" path="/v1/subscriptions/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.subscriptions.get(id="<value>")
+    res = spaire.subscriptions.get(id="<value>")
 
     # Handle response
     print(res)
@@ -211,14 +211,14 @@ Update a subscription.
 
 <!-- UsageSnippet language="python" operationID="subscriptions:update" method="patch" path="/v1/subscriptions/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.subscriptions.update(id="<value>", subscription_update={
+    res = spaire.subscriptions.update(id="<value>", subscription_update={
         "product_id": "<value>",
     })
 
@@ -259,14 +259,14 @@ Revoke a subscription, i.e cancel immediately.
 
 <!-- UsageSnippet language="python" operationID="subscriptions:revoke" method="delete" path="/v1/subscriptions/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.subscriptions.revoke(id="<value>")
+    res = spaire.subscriptions.revoke(id="<value>")
 
     # Handle response
     print(res)

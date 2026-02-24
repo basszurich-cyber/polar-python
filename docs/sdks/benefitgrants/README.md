@@ -17,14 +17,14 @@ List benefit grants across all benefits for the authenticated organization.
 
 <!-- UsageSnippet language="python" operationID="benefit-grants:list" method="get" path="/v1/benefit-grants/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.benefit_grants.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.benefit_grants.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items

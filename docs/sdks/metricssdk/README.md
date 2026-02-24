@@ -21,15 +21,15 @@ Currency values are output in cents.
 <!-- UsageSnippet language="python" operationID="metrics:get" method="get" path="/v1/metrics/" -->
 ```python
 from datetime import date
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.metrics.get(start_date=date.fromisoformat("2025-03-14"), end_date=date.fromisoformat("2025-03-18"), interval=polar_sdk.TimeInterval.HOUR, timezone="UTC", organization_id=None)
+    res = spaire.metrics.get(start_date=date.fromisoformat("2025-03-14"), end_date=date.fromisoformat("2025-03-18"), interval=spaire_sdk.TimeInterval.HOUR, timezone="UTC", organization_id=None)
 
     # Handle response
     print(res)
@@ -72,14 +72,14 @@ Get the interval limits for the metrics endpoint.
 
 <!-- UsageSnippet language="python" operationID="metrics:limits" method="get" path="/v1/metrics/limits" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.metrics.limits()
+    res = spaire.metrics.limits()
 
     # Handle response
     print(res)

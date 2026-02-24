@@ -21,14 +21,14 @@ List discounts.
 
 <!-- UsageSnippet language="python" operationID="discounts:list" method="get" path="/v1/discounts/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.discounts.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.discounts.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -69,17 +69,17 @@ Create a discount.
 
 <!-- UsageSnippet language="python" operationID="discounts:create" method="post" path="/v1/discounts/" -->
 ```python
-import polar_sdk
-from polar_sdk import Polar
+import spaire_sdk
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.discounts.create(request={
-        "duration": polar_sdk.DiscountDuration.ONCE,
-        "type": polar_sdk.DiscountType.FIXED,
+    res = spaire.discounts.create(request={
+        "duration": spaire_sdk.DiscountDuration.ONCE,
+        "type": spaire_sdk.DiscountType.FIXED,
         "basis_points": 449604,
         "name": "<value>",
         "organization_id": "1dbfc517-0bbf-4301-9ba8-555ca42b9737",
@@ -118,14 +118,14 @@ Get a discount by ID.
 
 <!-- UsageSnippet language="python" operationID="discounts:get" method="get" path="/v1/discounts/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.discounts.get(id="<value>")
+    res = spaire.discounts.get(id="<value>")
 
     # Handle response
     print(res)
@@ -161,14 +161,14 @@ Update a discount.
 
 <!-- UsageSnippet language="python" operationID="discounts:update" method="patch" path="/v1/discounts/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.discounts.update(id="<value>", discount_update={})
+    res = spaire.discounts.update(id="<value>", discount_update={})
 
     # Handle response
     print(res)
@@ -205,14 +205,14 @@ Delete a discount.
 
 <!-- UsageSnippet language="python" operationID="discounts:delete" method="delete" path="/v1/discounts/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.discounts.delete(id="<value>")
+    spaire.discounts.delete(id="<value>")
 
     # Use the SDK ...
 

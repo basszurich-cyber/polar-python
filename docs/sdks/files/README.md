@@ -21,14 +21,14 @@ List files.
 
 <!-- UsageSnippet language="python" operationID="files:list" method="get" path="/v1/files/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.files.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
+    res = spaire.files.list(organization_id="1dbfc517-0bbf-4301-9ba8-555ca42b9737", page=1, limit=10)
 
     while res is not None:
         # Handle items
@@ -68,14 +68,14 @@ Create a file.
 
 <!-- UsageSnippet language="python" operationID="files:create" method="post" path="/v1/files/" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.files.create(request={
+    res = spaire.files.create(request={
         "name": "<value>",
         "mime_type": "<value>",
         "size": 612128,
@@ -118,14 +118,14 @@ Complete a file upload.
 
 <!-- UsageSnippet language="python" operationID="files:uploaded" method="post" path="/v1/files/{id}/uploaded" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.files.uploaded(id="<value>", file_upload_completed={
+    res = spaire.files.uploaded(id="<value>", file_upload_completed={
         "id": "<id>",
         "path": "/boot",
         "parts": [
@@ -183,14 +183,14 @@ Update a file.
 
 <!-- UsageSnippet language="python" operationID="files:update" method="patch" path="/v1/files/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    res = polar.files.update(id="<value>", file_patch={})
+    res = spaire.files.update(id="<value>", file_patch={})
 
     # Handle response
     print(res)
@@ -228,14 +228,14 @@ Delete a file.
 
 <!-- UsageSnippet language="python" operationID="files:delete" method="delete" path="/v1/files/{id}" -->
 ```python
-from polar_sdk import Polar
+from spaire_sdk import Spaire
 
 
-with Polar(
+with Spaire(
     access_token="<YOUR_BEARER_TOKEN_HERE>",
-) as polar:
+) as spaire:
 
-    polar.files.delete(id="<value>")
+    spaire.files.delete(id="<value>")
 
     # Use the SDK ...
 

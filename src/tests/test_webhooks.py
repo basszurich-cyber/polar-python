@@ -7,17 +7,19 @@ import pytest
 from pydantic import ValidationError
 from standardwebhooks.webhooks import Webhook
 
-from polar_sdk.models.checkout import Checkout
-from polar_sdk.models.checkoutcustomerbillingaddressfields import (
-    CheckoutCustomerBillingAddressFields,
+from spaire_sdk.models.checkout import Checkout
+from spaire_sdk.models.checkoutbillingaddressfields import (
+    CheckoutBillingAddressFields,
 )
-from polar_sdk.models.checkoutproduct import CheckoutProduct
-from polar_sdk.models.checkoutstatus import CheckoutStatus
-from polar_sdk.models.paymentprocessor import PaymentProcessor
-from polar_sdk.models.productpricefixed import ProductPriceFixed
-from polar_sdk.models.productpricetype import ProductPriceType
-from polar_sdk.models.webhookcheckoutcreatedpayload import WebhookCheckoutCreatedPayload
-from polar_sdk.webhooks import WebhookVerificationError, validate_event
+from spaire_sdk.models.billingaddressfieldmode import BillingAddressFieldMode
+from spaire_sdk.models.checkoutproduct import CheckoutProduct
+from spaire_sdk.models.checkoutstatus import CheckoutStatus
+from spaire_sdk.models.paymentprocessor import PaymentProcessor
+from spaire_sdk.models.productpricefixed import ProductPriceFixed
+from spaire_sdk.models.productpricesource import ProductPriceSource
+from spaire_sdk.models.productpricetype import ProductPriceType
+from spaire_sdk.models.webhookcheckoutcreatedpayload import WebhookCheckoutCreatedPayload
+from spaire_sdk.webhooks import WebhookVerificationError, validate_event
 
 ORGANIZATION_ID = str(uuid.uuid4())
 PRODUCT_ID = str(uuid.uuid4())
@@ -29,6 +31,7 @@ price = ProductPriceFixed(
     modified_at=None,
     is_archived=False,
     product_id=PRODUCT_ID,
+    source=ProductPriceSource.CATALOG,
     price_currency="usd",
     price_amount=1000,
     type=ProductPriceType.ONE_TIME,
@@ -45,23 +48,37 @@ product = CheckoutProduct(
     is_archived=False,
     organization_id=ORGANIZATION_ID,
     recurring_interval=None,
+    recurring_interval_count=None,
+    trial_interval=None,
+    trial_interval_count=None,
     prices=[price],
     benefits=[],
     medias=[],
 )
 
+billing_address_fields = CheckoutBillingAddressFields(
+    country=BillingAddressFieldMode.REQUIRED,
+    state=BillingAddressFieldMode.DISABLED,
+    city=BillingAddressFieldMode.DISABLED,
+    postal_code=BillingAddressFieldMode.DISABLED,
+    line1=BillingAddressFieldMode.DISABLED,
+    line2=BillingAddressFieldMode.DISABLED,
+)
+
 checkout_created = WebhookCheckoutCreatedPayload(
     TYPE="checkout.created",
+    timestamp=datetime.datetime.now(datetime.timezone.utc),
     data=Checkout(
         id=str(uuid.uuid4()),
         created_at=datetime.datetime.now(datetime.timezone.utc),
         modified_at=None,
         status=CheckoutStatus.OPEN,
         client_secret="CLIENT_SECRET",
-        url="https://polar.sh/checkout/CLIENT_SECRET",
+        url="https://example.com/checkout/CLIENT_SECRET",
         expires_at=datetime.datetime.now(datetime.timezone.utc)
         + datetime.timedelta(hours=1),
-        success_url="https://polar.sh/checkout/CLIENT_SECRET/confirmation",
+        success_url="https://example.com/checkout/CLIENT_SECRET/confirmation",
+        return_url=None,
         embed_origin=None,
         tax_amount=0,
         amount=0,
@@ -69,6 +86,11 @@ checkout_created = WebhookCheckoutCreatedPayload(
         currency="usd",
         net_amount=1000,
         total_amount=1000,
+        allow_trial=None,
+        active_trial_interval=None,
+        active_trial_interval_count=None,
+        trial_end=None,
+        organization_id=ORGANIZATION_ID,
         product_id=PRODUCT_ID,
         product_price_id=PRICE_ID,
         discount_id=None,
@@ -85,10 +107,16 @@ checkout_created = WebhookCheckoutCreatedPayload(
         customer_billing_address=None,
         customer_tax_id=None,
         payment_processor_metadata={},
+        billing_address_fields=billing_address_fields,
+        trial_interval=None,
+        trial_interval_count=None,
         metadata={},
+        external_customer_id=None,
+        customer_external_id=None,
         product=product,
         products=[product],
         product_price=price,
+        prices=None,
         discount=None,
         subscription_id=None,
         attached_custom_fields=[],
@@ -98,15 +126,6 @@ checkout_created = WebhookCheckoutCreatedPayload(
         require_billing_address=False,
         is_business_customer=False,
         customer_billing_name=None,
-        customer_external_id=None,
-        customer_billing_address_fields=CheckoutCustomerBillingAddressFields(
-            country=True,
-            state=False,
-            city=False,
-            postal_code=False,
-            line1=False,
-            line2=False,
-        ),
     ),
 )
 
